@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.sg.rocketlaunch.service.RocketLaunchServiceTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.735 s - in com.sg.rocketlaunch.service.RocketLaunchServiceTest

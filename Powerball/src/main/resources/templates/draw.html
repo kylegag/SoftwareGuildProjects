@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Simulate a drawing</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="row">
+            <div class ="col-md-5">
+                <form method="post" action = "/draw/handler">
+                    <h1>Simulate a drawing</h1>
+                    <div class="form-group">
+                        <label for="firstNum">First five numbers(1-69):</label>
+                        <input type="number" id="firstNum" name="firstNum" class="form-control" style="width: 75px; display:inline;" th:value="${firstNum}" readonly>
+                        <input type="number" id="secondNum" name="secondNum" class="form-control" style="width: 75px; display:inline;" th:value="${secondNum}" readonly>
+                        <input type="number" id="thirdNum" name="thirdNum" class="form-control" style="width: 75px; display:inline;" th:value="${thirdNum}" readonly>
+                        <input type="number" id="fourthNum" name="fourthNum" class="form-control" style="width: 75px; display:inline;" th:value="${fourthNum}" readonly>
+                        <input type="number" id="fifthNum" name="fifthNum" class="form-control" style="width: 75px; display:inline;" th:value="${fifthNum}" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="powerBall">Power ball(1-26):</label>
+                        <input type="number" id="powerBall" name="powerBall" class="form-control" style="width: 75px; display:inline;" th:value="${powerBall}" readonly>
+                    </div>
+
+                    <div>
+                        <button class="btn btn-primary" type="submit">Draw</button>
+                        <a href="/" class="btn btn-secondary">Back</a>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-7" th:switch="${showResults}">
+                <div th:case="'true'">
+                    <h2>Closest Match</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>First name</th>                                
+                                <th>Last name</th>
+                                <th>Email</th>
+                                <th>State</th>
+                                <th>Pick</th>
+                                <th>Valid</th>
+                                <th>Quick pick</th>
+                                <th>Pick ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td th:text="${closestMatch.firstName}">John</td>
+                                <td th:text="${closestMatch.lastName}">Doe</td>
+                                <td th:text="${closestMatch.email}">johndoe@gmail.com</td>
+                                <td th:text="${closestMatch.state}">MN</td>
+                                <td th:text="${closestMatch.firstNum} + ' '
+                                    + ${closestMatch.secondNum} + ' '
+                                    + ${closestMatch.thirdNum} + ' '
+                                    + ${closestMatch.fourthNum} + ' '
+                                    + ${closestMatch.fifthNum} + ' '
+                                    + ${closestMatch.powerBall} + '*'">1 2 3 4 5 6*</td>
+                                <td>
+                                    <input type="checkbox" onclick="return false;" th:checked="${closestMatch.isValid}"/>
+                                </td>
+                                <td>
+                                    <input type="checkbox" onclick="return false;" th:checked="${closestMatch.isQuickPick}"/>
+                                </td>
+                                <td th:text="${closestMatch.pickId}">1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div th:case="'false'">                
+                </div>
+                <div th:case="'showNoResultsMessage'">
+                    <h2>No one was even close!</h2>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

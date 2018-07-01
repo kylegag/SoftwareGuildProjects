@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Make a pick</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Add a Pick</h1>
+            <form method="post" action = "/pick/handler">
+                <input type="hidden" name="isQuickPick" th:value="${isQuickPick}">
+                <div class="form-group">
+                    <label for="txtFirstName">First Name:</label>
+                    <input type="text" id="txtFirstName" name="firstName" class="form-control" th:value="${pick.firstName}">
+                    <span class="text-danger"
+                          th:if="${#fields.hasErrors('pick.firstName')}"
+                          th:errors="*{pick.firstName}">John</span>
+                </div>
+                <div class="form-group">
+                    <label for="txtLastName">Last Name:</label>
+                    <input type="text" id="txtLastName" name="lastName" class="form-control" th:value="${pick.lastName}">
+                    <span class="text-danger"
+                          th:if="${#fields.hasErrors('pick.lastName')}"
+                          th:errors="*{pick.lastName}">Doe</span>
+                </div>
+                <div class="form-group">
+                    <label for="txtEmail">Email address:</label>
+                    <input type="email" id="txtEmail" name="email" class="form-control" th:value="${pick.email}">
+                    <span class="text-danger"
+                          th:if="${#fields.hasErrors('pick.email')}"
+                          th:errors="*{pick.email}">jDoe@gmail.com</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="state">State:</label>
+                    <select id="state" name="state" class="form-control">
+                        <option value="AL" th:selected="${pick.state} == 'AL'">Alabama</option>
+                        <option value="AK" th:selected="${pick.state} == 'AK'">Alaska</option>
+                        <option value="AZ" th:selected="${pick.state} == 'AZ'">Arizona</option>
+                        <option value="AR" th:selected="${pick.state} == 'AR'">Arkansas</option>
+                        <option value="CA" th:selected="${pick.state} == 'CA'">California</option>
+                        <option value="CO" th:selected="${pick.state} == 'CO'">Colorado</option>
+                        <option value="CT" th:selected="${pick.state} == 'CT'">Connecticut</option>
+                        <option value="DE" th:selected="${pick.state} == 'DE'">Delaware</option>
+                        <option value="DC" th:selected="${pick.state} == 'DC'">District Of Columbia</option>
+                        <option value="FL" th:selected="${pick.state} == 'FL'">Florida</option>
+                        <option value="GA" th:selected="${pick.state} == 'GA'">Georgia</option>
+                        <option value="HI" th:selected="${pick.state} == 'HI'">Hawaii</option>
+                        <option value="ID" th:selected="${pick.state} == 'ID'">Idaho</option>
+                        <option value="IL" th:selected="${pick.state} == 'IL'">Illinois</option>
+                        <option value="IN" th:selected="${pick.state} == 'IN'">Indiana</option>
+                        <option value="IA" th:selected="${pick.state} == 'IA'">Iowa</option>
+                        <option value="KS" th:selected="${pick.state} == 'KS'">Kansas</option>
+                        <option value="KY" th:selected="${pick.state} == 'KY'">Kentucky</option>
+                        <option value="LA" th:selected="${pick.state} == 'LA'">Louisiana</option>
+                        <option value="ME" th:selected="${pick.state} == 'ME'">Maine</option>
+                        <option value="MD" th:selected="${pick.state} == 'MD'">Maryland</option>
+                        <option value="MA" th:selected="${pick.state} == 'MA'">Massachusetts</option>
+                        <option value="MI" th:selected="${pick.state} == 'MI'">Michigan</option>
+                        <option value="MN" th:selected="${pick.state} == 'MN'">Minnesota</option>
+                        <option value="MS" th:selected="${pick.state} == 'MS'">Mississippi</option>
+                        <option value="MO" th:selected="${pick.state} == 'MO'">Missouri</option>
+                        <option value="MT" th:selected="${pick.state} == 'MT'">Montana</option>
+                        <option value="NE" th:selected="${pick.state} == 'NE'">Nebraska</option>
+                        <option value="NV" th:selected="${pick.state} == 'NV'">Nevada</option>
+                        <option value="NH" th:selected="${pick.state} == 'NH'">New Hampshire</option>
+                        <option value="NJ" th:selected="${pick.state} == 'NJ'">New Jersey</option>
+                        <option value="NM" th:selected="${pick.state} == 'NM'">New Mexico</option>
+                        <option value="NY" th:selected="${pick.state} == 'NY'">New York</option>
+                        <option value="NC" th:selected="${pick.state} == 'NC'">North Carolina</option>
+                        <option value="ND" th:selected="${pick.state} == 'ND'">North Dakota</option>
+                        <option value="OH" th:selected="${pick.state} == 'OH'">Ohio</option>
+                        <option value="OK" th:selected="${pick.state} == 'OK'">Oklahoma</option>
+                        <option value="OR" th:selected="${pick.state} == 'OR'">Oregon</option>
+                        <option value="PA" th:selected="${pick.state} == 'PA'">Pennsylvania</option>
+                        <option value="RI" th:selected="${pick.state} == 'RI'">Rhode Island</option>
+                        <option value="SC" th:selected="${pick.state} == 'SC'">South Carolina</option>
+                        <option value="SD" th:selected="${pick.state} == 'SD'">South Dakota</option>
+                        <option value="TN" th:selected="${pick.state} == 'TN'">Tennessee</option>
+                        <option value="TX" th:selected="${pick.state} == 'TX'">Texas</option>
+                        <option value="UT" th:selected="${pick.state} == 'UT'">Utah</option>
+                        <option value="VT" th:selected="${pick.state} == 'VT'">Vermont</option>
+                        <option value="VA" th:selected="${pick.state} == 'VA'">Virginia</option>
+                        <option value="WA" th:selected="${pick.state} == 'WA'">Washington</option>
+                        <option value="WV" th:selected="${pick.state} == 'WV'">West Virginia</option>
+                        <option value="WI" th:selected="${pick.state} == 'WI'">Wisconsin</option>
+                        <option value="WY" th:selected="${pick.state} == 'WY'">Wyoming</option>
+                    </select>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="firstNum">First five numbers(1-69):</label>
+                    <input type="number" id="firstNum" name="firstNum" class="form-control" style="width: 75px; display:inline;" th:value="${firstNum}">
+                    <input type="number" id="secondNum" name="secondNum" class="form-control" style="width: 75px; display:inline;" th:value="${secondNum}">
+                    <input type="number" id="thirdNum" name="thirdNum" class="form-control" style="width: 75px; display:inline;" th:value="${thirdNum}">
+                    <input type="number" id="fourthNum" name="fourthNum" class="form-control" style="width: 75px; display:inline;" th:value="${fourthNum}">
+                    <input type="number" id="fifthNum" name="fifthNum" class="form-control" style="width: 75px; display:inline;" th:value="${fifthNum}">
+                </div>
+
+                <div class="form-group">
+                    <label for="powerBall">Power ball(1-26):</label>
+                    <input type="number" id="powerBall" name="powerBall" class="form-control" style="width: 75px; display:inline;" th:value="${powerBall}">
+                </div>
+
+                <div>
+                    <button class="btn btn-primary" type="submit" value="submit" name="action">Save</button>
+                    <a href="/" class="btn btn-secondary">Back</a>
+                    <button class="btn btn-primary" type="submit" value="quick" name="action">Quick pick</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

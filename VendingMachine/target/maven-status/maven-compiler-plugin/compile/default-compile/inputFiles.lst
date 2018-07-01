@@ -1,0 +1,17 @@
+C:\Users\Kyle\source\repos\kyle-gag-individual-work\VendingMachine\src\main\java\com\sg\vendingmachine\ui\UserIO.java
+C:\Users\Kyle\source\repos\kyle-gag-individual-work\VendingMachine\src\main\java\com\sg\vendingmachine\controller\VendingMachineController.java
+C:\Users\Kyle\source\repos\kyle-gag-individual-work\VendingMachine\src\main\java\com\sg\vendingmachine\service\InsufficientFundsException.java
+C:\Users\Kyle\source\repos\kyle-gag-individual-work\VendingMachine\src\main\java\com\sg\vendingmachine\dto\VendingItem.java
+C:\Users\Kyle\source\repos\kyle-gag-individual-work\VendingMachine\src\main\java\com\sg\vendingmachine\App.java
+C:\Users\Kyle\source\repos\kyle-gag-individual-work\VendingMachine\src\main\java\com\sg\vendingmachine\controller\SpringBootController.java
+C:\Users\Kyle\source\repos\kyle-gag-individual-work\VendingMachine\src\main\java\com\sg\vendingmachine\dao\VendingMachinePersistenceException.java
+C:\Users\Kyle\source\repos\kyle-gag-individual-work\VendingMachine\src\main\java\com\sg\vendingmachine\ui\UserIOConsoleImpl.java
+C:\Users\Kyle\source\repos\kyle-gag-individual-work\VendingMachine\src\main\java\com\sg\vendingmachine\ui\VendingMachineView.java
+C:\Users\Kyle\source\repos\kyle-gag-individual-work\VendingMachine\src\main\java\com\sg\vendingmachine\service\VendingMachineState.java
+C:\Users\Kyle\source\repos\kyle-gag-individual-work\VendingMachine\src\main\java\com\sg\vendingmachine\dto\Change.java
+C:\Users\Kyle\source\repos\kyle-gag-individual-work\VendingMachine\src\main\java\com\sg\vendingmachine\dao\VendingMachineDao.java
+C:\Users\Kyle\source\repos\kyle-gag-individual-work\VendingMachine\src\main\java\com\sg\vendingmachine\dao\VendingMachineJdbcTemplate.java
+C:\Users\Kyle\source\repos\kyle-gag-individual-work\VendingMachine\src\main\java\com\sg\vendingmachine\dao\MySqlDatabase.java
+C:\Users\Kyle\source\repos\kyle-gag-individual-work\VendingMachine\src\main\java\com\sg\vendingmachine\dao\VendingMachineDaoStubImpl.java
+C:\Users\Kyle\source\repos\kyle-gag-individual-work\VendingMachine\src\main\java\com\sg\vendingmachine\service\OutOfStockException.java
+C:\Users\Kyle\source\repos\kyle-gag-individual-work\VendingMachine\src\main\java\com\sg\vendingmachine\dao\VendingMachineDaoFileImpl.java

@@ -1,0 +1,61 @@
+body {
+    background-size:cover;
+    background-image: url("images/clouds-dawn-dusk.jpg");
+    background-color: #cccccc;
+}
+
+h2 {
+    margin-top: 0px;
+    color: #FFFFF0;
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 70px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 26.4px;
+}
+
+.topRow.field {
+    display: block;
+    padding-top: 75px;
+}
+
+.middleRow.field {
+    display: block;
+    padding-top: 75px;
+}
+
+.bottomRow.field {
+    display: block;
+    padding-top: 75px;
+}
+
+.field {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+label {
+    color: #FFFFF0;
+}
+
+#searchBtn {
+    width: 100%;
+}
+
+.searchDiv.bottomRow {
+    margin-left: 30%;
+    margin-right: 20%;
+    padding-top: 90px;
+}
+
+.box {
+    width: 200px;
+}
+
+#backBtn {
+    margin-top: 75px;
+    margin-left: 50px;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Create a new launch</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/AddNewLaunch.css">
+        <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <form method="post" action="/Home">
+                <button id="backBtn" class="btn-light btn-lg" type="submit" value="Home" name="action">Home</button>
+            </form>
+            <h2>Add a new launch</h2>
+            <form method="post" th:action="@{/SubmitNewLaunch}" th:object="${launch}">
+                <div class="form-group">
+                    <div class='row'>
+                        <div class='col-md-4'>
+                            <div class="form-group field topRow">
+                                <label for="engine">Engine</label>
+                                <select id="engine" name="rocket.engine.engineId" class="form-control box">
+                                    <option th:each="engine: ${engines}" th:value="${engine.engineId}" th:text="${engine.name}" th:selected="${launch.rocket.engine.engineId} == ${engine.engineId}">Engine Name</option>
+                                </select>
+                            </div>
+                            <div class="form-group field middleRow">
+                                <label for="body">Body</label>
+                                <select id="body" name="rocket.body.bodyId" class="form-control box">
+                                    <option th:each="body: ${bodies}" th:value="${body.bodyId}" th:text="${body.name}" th:selected="${launch.rocket.body.bodyId} == ${body.bodyId}">Body Name</option>
+                                </select>
+                            </div>
+                            <div class="form-group field bottomRow">
+                                <label for="fuel">Fuel type</label>
+                                <select id="fuel" name="rocket.fuel.fuelId" class="form-control box">
+                                    <option th:each="fuel: ${fuels}" th:value="${fuel.fuelId}" th:text="${fuel.name}" th:selected="${launch.rocket.fuel.fuelId} == ${fuel.fuelId}">Fuel Name</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class='col-md-4'>
+                            <div class="form-group field topRow">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="rocket.name" class="form-control box" th:value="${launch.rocket.name}">
+                                <span class="text-danger"
+                                      th:if="${#fields.hasErrors('rocket.name')}"
+                                      th:errors="*{rocket.name}">Birdie</span>
+                            </div>
+                            <!--
+                            <div class="form-group field middleRow">
+                                <label for="mass">Current Mass</label>
+                                <input type="number" id="mass" class="form-control box" readonly>
+                            </div>
+                            -->
+                            <div class="form-group launchDiv bottomRow">
+                                <button id="launchBtn" class="btn-lg btn-primary" type="submit" value="submit" name="action">Launch</button>
+                            </div>
+
+                        </div>
+                        <div class='col-md-4'>
+                            <div class="form-group field topRow">
+                                <label for="location">Location</label>
+                                <select id="location" name="location.locationId" class="form-control box">
+                                    <option th:each="location: ${locations}" th:value="${location.locationId}" th:text="${location.name}" th:selected="${launch.location.locationId} == ${location.locationId}">Location Name</option>
+                                </select>
+                            </div>
+                            <div class="form-group field middleRow">
+                                <label for="datePicker">Date</label>
+                                <input type="text" id="datePicker" name="date" class="form-control box" th:value="${date}">
+                                <span class="text-danger"
+                                      th:if="${#fields.hasErrors('date')}"
+                                      th:errors="*{date}">**Error**</span>
+                                      <!-- use engine field to store errors for date -->
+                            </div>
+                            <div class="form-group field bottomRow">
+                                <label for="angle">Launch Angle(Degrees)</label>
+                                <input type="number" id="angle" name="angle" class="form-control box" step="0.1" th:value="${launch.angle}">
+                                <span class="text-danger"
+                                      th:if="${#fields.hasErrors('angle')}"
+                                      th:errors="*{angle}">**Error**</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script src = "/js/jquery-3.3.1.min.js"></script>
+        <script src = "/js/bootstrap.min.js"></script>
+        <script src = "/js/jquery-ui.min.js"></script>
+        <script src = "/js/AddNewLaunch.js"></script>
+    </body>
+</html>

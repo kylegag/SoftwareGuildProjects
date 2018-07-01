@@ -1,0 +1,14 @@
+/*
+input, label {
+  display: block;
+}
+*/
+
+#mainHeading {
+  text-align: center;
+}
+
+.totalSpacer {
+  display: none;
+  height: 40px;
+}

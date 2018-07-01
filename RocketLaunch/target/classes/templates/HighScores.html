@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>High Scores</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/HighScores.css">
+    </head>
+    <body>
+        <div class="container">
+            <form method="post" action="/Home">
+                <button id="backBtn" class="btn-light btn-lg" type="submit" value="Home" name="action">Home</button>
+            </form>
+            <h2>High Scores</h2>
+            <form method="post" action="/PlayLaunch">
+                <div class="form-group">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Distance(Meters)</th>
+                                <th>Name</th>                                
+                                <th>Engine</th>
+                                <th>Body</th>
+                                <th>Fuel</th>
+                                <th>Location</th>
+                                <th>Date</th>
+                                <th>Launch Angle(Degrees)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="result: ${results}">
+                                <td th:text="${result.distance}">Distance</td>
+                                <td th:text="${result.rocket.name}">Name</td>
+                                <td th:text="${result.rocket.engine.name}">Engine</td>
+                                <td th:text="${result.rocket.body.name}">Body</td>
+                                <td th:text="${result.rocket.fuel.name}">Fuel</td>
+                                <td th:text="${result.location.name}">Location</td>
+                                <td th:text="${result.date}">Date</td>
+                                <td th:text="${result.angle}">Angle</td>
+                                <td><button class = "btn-light btn" type="submit" th:value="${result.launchId}" name="action">Play</button>
+                                </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+        <script src = "/js/jquery-3.3.1.min.js"></script>
+        <script src = "/js/bootstrap.min.js"></script>
+        <script src = "/js/HighScores.js"></script>
+    </body>
+</html>

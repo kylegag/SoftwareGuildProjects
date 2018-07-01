@@ -1,0 +1,28 @@
+body {
+    background-size: cover;
+    background-image: url("images/clouds-dawn-dusk.jpg");
+    /* background-image: url("images/minneapolis-photo.jpg"); */
+    background-color: #cccccc;
+}
+
+h2 {
+    margin-top: 0px;
+    color: #FFFFF0;
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 70px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 26.4px;
+}
+
+#backBtn {
+    margin-top: 75px;
+    margin-left: 50px;
+}
+
+#launchBtn {
+    margin-left: 325px;
+    width: 400px;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vending Machine</title>
+    <link href = "css/bootstrap.min.css"
+        rel = "stylesheet">
+    <link href = "css/vendingMachine.css"
+        rel = "stylesheet">
+  </head>
+  <body>
+    <h1 style="text-align:center">Vending Machine</h1>
+    <hr>
+    <div class="container">
+        <div id="vendingItems" class="col-md-8">
+
+        </div>
+        <div id="buttons" class="col-md-4">
+          <form class="form-horizontal" role="form" id="edit-form">
+            <div class="form-group">
+              <row>
+                <label style="font-size: 18px;"
+                     for="total-cash"
+                     class="control-label col-md-offset-1">
+                  Total $ In
+               </label>
+             </row>
+             <row>
+                  <input type="text"
+                    class="form-control col-md-offset-1"
+                    id="total-cash"
+                    placeholder="$0.00" required/>
+             </row>
+             <row>
+                  <button type="button"
+                               id="add-dollar-button"
+                               class="btn btn-default col-md-offset-2 col-md-4">
+                          Add Dollar
+                  </button>
+                  <button type="button"
+                               id="add-quarter-button"
+                               class="btn btn-default col-md-offset-2 col-md-4">
+                          Add Quarter
+                  </button>
+             </row>
+             <row>
+               <button type="button"
+                               id="add-dime-button"
+                               class="btn btn-default col-md-offset-2 col-md-4">
+                          Add Dime
+                </button>
+                <button type="button"
+                               id="add-nickel-button"
+                               class="btn btn-default col-md-offset-2 col-md-4">
+                          Add Nickel
+                </button>
+             </row>
+             <row>
+                <label style="font-size: 18px;"
+                     for="messages"
+                     class="control-label col-md-offset-1">
+                  Messages
+               </label>
+             </row>
+             <row>
+                  <input type="text"
+                    class="form-control col-md-offset-1"
+                    id="messages"
+                    placeholder="..." required/>
+             </row>
+             <row>
+               <label style="font-size: 18px;"
+                      for="curr-item" class="col-md-3 control-label">
+                 Item:
+               </label>
+               <div class="col-md-9">
+                 <input type="text"
+                        class="form-control"
+                        id="curr-item"
+                        placeholder="..." required/>
+             </row>
+             <row>
+                 <button type="button"
+                         style="font-size: 18px;"
+                         id="purchase-button"
+                         class="btn btn-default col-md-offset-1 col-md-10">
+                  Make Purchase
+                </button>
+             </row>
+
+             <row>
+               <label style="font-size: 18px;"
+                     for="change"
+                     class="control-label col-md-offset-1">
+                    Change
+               </label>
+             </row>
+             <row>
+               <input type="text"
+                    class="form-control col-md-offset-1"
+                    id="change"
+                    placeholder="$0.00" required/>
+             </row>
+             <row>
+                <button type="button"
+                         style="font-size: 18px;"
+                         id="change-button"
+                         class="btn btn-default col-md-offset-3 col-md-7">
+                   Change Return
+                </button>
+             </row>
+           </div>
+          </form>
+        </div>
+    </div>
+    <!--<script src = "js/jquery-2.2.4.min.js"></script>-->
+    <script src = "js/jquery-3.3.1.min.js"></script>
+    <script scr = "js/bootstrap.min.js"></script>
+    <script src = "js/vendingMachine.js"></script>
+  </body>
+</html>
